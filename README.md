@@ -9,14 +9,15 @@ Passwords are not ecripted
 ## Following are the list of apis
 
 ## 1. API for Registration
-here id,username and password are stored and api_token is stored as null.
+
+Input Fields: username (String) and password (String).
 ### Example Request
 curl -H "Content-Type: application/json" -X POST -d '{
     "username": "ankush",
     "password": "ankush@123"
 }'  http://localhost:8080/users/register
 
-### Description of fields:
+### Database View:
 
 | id | api_token                            | password   | username  |
 |----|--------------------------------------|------------|-----------|
@@ -28,11 +29,12 @@ curl -H "Content-Type: application/json" -X POST -d '{
 "REGISTERED_SUCCESSFULLY"
 
 If already registered then response is 
-### Example Response
+
 "USER_ALREADY_EXISTS"
 
 ## 2. API for Login
-Here if username and password are there token is generated and saved
+Input Fields: username (String) and password (String).  
+Here if username and password are correct then token is generated and saved
 
 ### Example Request
 curl -H "Content-Type: application/json" -X POST -d '{
@@ -40,7 +42,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
     "password": "1234"
 }'  http://localhost:8080/users/login
 
-### Description of fields:
+### Database View:
 | id | api_token                            | password   | username  |
 |----|--------------------------------------|------------|-----------|
 |  3 | NULL                                 | 1324234    | ankfdsait |
